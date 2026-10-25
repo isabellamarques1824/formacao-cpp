@@ -1,6 +1,12 @@
 #include <iostream>
 #include "Conta.hpp"
 
+Conta::Conta(std::string numero, std::string nomeTitular, std::string cpfTitular)
+    :numero(numero),nomeTitular(nomeTitular),cpfTitular(cpfTitular),saldo(0)
+{
+
+}
+
 void Conta::sacar(float valorASacar){
     if(valorASacar < 0 ){
         std::cout << "Nao pode sacar valor negativo\n";
@@ -37,16 +43,4 @@ std::string Conta::getCpfTitular() const{
 
 std::string Conta::getNumero() const{
     return numero;
-}
-
-void Conta::setNumero(std::string set_numero){
-    numero = set_numero;
-}
-
-void Conta::setcpfTitular(std::string set_cpfTitular){
-    cpfTitular = set_cpfTitular;
-}
-
-void Conta::setNomeTitular(std::string set_nomeTitular){
-    nomeTitular = set_nomeTitular;
 }
