@@ -18,12 +18,15 @@ void Conta::sacar(float valorASacar){
         std::cout << "Nao pode sacar valor negativo\n";
         return;
     }
-    if(valorASacar > saldo){
+
+    float tarifa = valorASacar;
+    float ValorDoSaque = valorASacar + tarifa;
+    if(ValorDoSaque > saldo){
         std::cout << "Saldo insuficiente\n";
         return;
     }
 
-    saldo -= valorASacar;
+    saldo -= ValorDoSaque;
 }
 
 void Conta::depositar(float valorADepositar){
