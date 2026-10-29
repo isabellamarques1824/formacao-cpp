@@ -1,4 +1,5 @@
 #include "Conta.hpp"
+#include "Funcionario.hpp"
 #include <iostream>
 
 
@@ -23,4 +24,5 @@ int main(){
 
     std::cout << "Numero de contas: " << Conta::getNumerodeContas()<< std::endl;
 
+    Funcionario funcionario(Cpf("123.456.789-10"), "Isabellinha", 1500);
 }

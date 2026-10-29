@@ -46,4 +46,3 @@ std::string Conta::getNumero() const{
 int Conta::getNumerodeContas(){
     return numeroDeContas;
 }
-

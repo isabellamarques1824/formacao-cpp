@@ -2,16 +2,10 @@
 
 #include <string>
 #include "Cpf.hpp"
+#include "Pessoa.hpp"
 
-class Titular
+class Titular: public Pessoa
 {
-private:
-    Cpf cpf;
-    std::string nome;
-    
 public:
-    Titular(Cpf cpf, std::string nomeTitular);
-    ~Titular();
-    std::string getNome() const;
-    void verificaNome();
+    Titular(Cpf cpf, std::string nome);
 };
