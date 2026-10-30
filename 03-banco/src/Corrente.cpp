@@ -1,6 +1,4 @@
 #include "Corrente.hpp"
-#include <iostream>
-
 
 Corrente::Corrente(std::string numero, Titular titular):
     Conta(numero,titular)
@@ -12,18 +10,12 @@ Corrente::~Corrente(){
 
 }
 
-void Corrente::sacar(float valorASacar){
-    if(valorASacar < 0 ){
-        std::cout << "Nao pode sacar valor negativo\n";
-        return;
-    }
+float Corrente::taxaDeSaque(float valorASacar) const{
+    return valorASacar * 0.05;
+}
 
-    float tarifa = valorASacar * 0.05;
-    float ValorDoSaque = valorASacar + tarifa;
-    if(ValorDoSaque > saldo){
-        std::cout << "Saldo insuficiente\n";
-        return;
-    }
 
-    saldo -= ValorDoSaque;
+void Corrente::transferePara(Conta& contaDestino, float valor){
+    sacar(valor);
+    contaDestino.depositar(valor);
 }

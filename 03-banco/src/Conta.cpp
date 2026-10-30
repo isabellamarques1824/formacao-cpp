@@ -19,8 +19,7 @@ void Conta::sacar(float valorASacar){
         return;
     }
 
-    float tarifa = valorASacar;
-    float ValorDoSaque = valorASacar + tarifa;
+    float ValorDoSaque = valorASacar + taxaDeSaque(valorASacar);
     if(ValorDoSaque > saldo){
         std::cout << "Saldo insuficiente\n";
         return;

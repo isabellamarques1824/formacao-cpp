@@ -8,5 +8,5 @@ private:
 public:
     Poupanca(std::string numero, Titular titular);
     ~Poupanca();
-    void sacar(float valorASacar) override;
+    float taxaDeSaque(float valorASacar) const override;
 };
